@@ -20,14 +20,12 @@ import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.image.WritableImage;
 
 public class PictureInsert {
-
-//	public static void main(String[] args) throws FileNotFoundException {
-//		Image img = new Image(new FileInputStream("C:\\Users\\Grayson\\Desktop\\storygame\\testing\\card.png"));
-//		WritableImage wImg = new WritableImage(img.getPixelReader(), 600, 400);
-//		System.out.println(insertPicture("C:\\Users\\Grayson\\Desktop\\storygame\\testing\\testing.docx", wImg));
-//
-//	}
-
+	
+	/*
+	 * This static method allows for images generated in JavaFX using the snapshot feature to be written
+	 * directly into a word document without the need to save them first. This is accomplished by 
+	 * writing the image to a byte array then using that byte array as the source of the image file.
+	 */
 	public static boolean insertPicture(String wordDocPath, WritableImage snap) {
 		BufferedImage tempImg = SwingFXUtils.fromFXImage(snap, null);
 		byte[] imageInByte;

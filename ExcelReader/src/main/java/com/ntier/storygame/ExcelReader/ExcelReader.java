@@ -16,31 +16,11 @@ public class ExcelReader {
 	
 	private static String[] titles= {"id","itemDesc","bv","ec","pr","analysis","code","test","workSum","value","cost","net","vs","avgRoll","depens"};
 	
-	public static void main(String[] args)  {
-		try {
-			ArrayList<HashMap<String, Integer>> rows = getExcelValues("C:\\Users\\Grayson\\Downloads\\temp\\WorkshopScenario.xlsx", 2);
-			for(HashMap<String,Integer> map :rows) {
-				System.out.print("-----------------------------------------------------------------------\n"+
-						"|id "+map.get("id")+"|");
-				if (map.get("itemDesc")!=-1) 
-					System.out.print("                           item decription: "+map.get("itemDesc"));
-				else
-					System.out.print("                           item decription: ");
-				if (map.get("bv")!=-1) 
-					System.out.print("    bv: "+map.get("bv"));
-				else
-					System.out.print("    bv: ");
-				if (map.get("ec")!=-1) 
-					System.out.print("    ec: "+map.get("ec")+" |\n");
-				else
-					System.out.print("    ec:   |\n");
-				
-				System.out.print("-----------------------------------------------------------------------\n\n");
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
+	/*
+	 * This static method will read from an excel file with a specific format to generate an ArrayList 
+	 * of HashMaps that contain the data from the excel sheet with preset string keys. This allows for
+	 * an easier time looping through the data to generate game cards for the agile story game.
+	 */
 	
 	public static ArrayList<HashMap<String,Integer>> getExcelValues(String excelPath,int sheetNum) throws IOException{
 		// Creating a xlsx file object with specific file path to read

@@ -32,8 +32,8 @@ public class ExcelReader {
   
         XSSFWorkbook workbook = new XSSFWorkbook(inputStream);
           
-        // Reading the first sheet of the excel file
-        XSSFSheet sheet = workbook.getSheetAt(2);
+        // Reading the specified sheet of the excel file
+        XSSFSheet sheet = workbook.getSheetAt(sheetNum);
           
         Iterator<Row> iterator = sheet.iterator();
         iterator.next();
@@ -57,7 +57,7 @@ public class ExcelReader {
                 case FORMULA:
                 	switch(cell.getCachedFormulaResultType()) {
                     case NUMERIC:
-                    	hash.put(titles[i],(int) cell.getNumericCellValue());
+                    	hash.put(titles[i],(int) cell.getNumericCellValue());//reading data from cells with formula
                         break;
 					default:
 						hash.put(titles[i],-1);

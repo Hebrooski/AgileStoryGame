@@ -1,4 +1,4 @@
-package com.ntier.storygame.ExcelReader;
+package com.ntier.storygame.util;
 
 import java.io.File;
 import java.io.FileInputStream;

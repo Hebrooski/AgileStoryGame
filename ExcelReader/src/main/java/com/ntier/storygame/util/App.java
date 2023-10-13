@@ -1,4 +1,4 @@
-package com.ntier.storygame.ExcelReader;
+package com.ntier.storygame.util;
 
 /**
  * Hello world!
